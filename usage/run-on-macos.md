@@ -18,6 +18,6 @@ description: Run palera1n on macOS
 2. Install wget with `sudo apt install wget`.
 3. Run `wget http://class.ironside.org.uk/palera1n-c_amd64.deb`
 4. Run `sudo dpkg -i palera1n-c_amd64.deb`
-
+5. Finally, you can run `palera1n` to jailbreak your device
 
 You may go to the Jailbreak page to learn how to use it.
