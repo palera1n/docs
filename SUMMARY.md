@@ -7,6 +7,7 @@
 * [Migration from palera1n.sh](usage/migration-from-palera1n.sh.md)
 * [Run on macOS](usage/run-on-macos.md)
 * [Run on Linux](usage/run-on-linux.md)
+* [If you're on Windows](usage/run-on-windows.md)
 * [Jailbreak](usage/jailbreak.md)
 
 ## palen1x

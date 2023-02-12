@@ -10,6 +10,6 @@ By default, this boot's with -f enabled in rootful, if you need to create fakefs
 
 The options menu looks like this, may be subject to change if palera1n-c ever gets a built-in TUI
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/palen1x-options.png>)
 
 Please read [Jailbreak](../usage/jailbreak.md) to see what options you need. Create Fakefs is -c, and -f is default.
