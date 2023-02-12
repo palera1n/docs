@@ -10,3 +10,9 @@ description: Welcome to the palera1n docs!
 * [Run on macOS](usage/run-on-macos.md)
 * [Run on Linux](usage/run-on-linux.md)
 * [Jailbreak](usage/jailbreak.md)
+
+## palen1x
+
+* [Flashing](palen1x/flashing-palen1x.md)
+* [Booting](palen1x/booting-palen1x.md)
+* [Jailbreak](palen1x/jailbreak-with-palen1x.md)
