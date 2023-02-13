@@ -4,7 +4,7 @@ description: Run palera1n on macOS
 
 # Run on macOS
 
-1. Download [this file](https://github.com/palera1n/palera1n-c/releases/download/v2.0.0-beta.1/palera1n-macos-universal)
+1. Download [this file](https://github.com/palera1n/palera1n-c/releases/download/v2.0.0-beta.3/palera1n-macos-universal)
 2. In a terminal, cd to where the binary was downloaded, usually Downloads
    1. Example: `cd ~/Downloads`
 3. Run `sudo mv ./palera1n-macos-universal /usr/local/bin/palera1n`
