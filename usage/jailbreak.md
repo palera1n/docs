@@ -12,7 +12,7 @@ description: Learn how to jailbreak your device with palera1n
 
 ### If you don't have enough space for the fakefs (16GB device, or just not enough space)
 * #### First jailbreak
-  * Run `./palera1n -f -B`<details><summary>What does this do?</summary>This creates the fakefs but with a smaller size at the expense of having unwritable parts in rarely-written paths. </details>
+  * Run `./palera1n -f -B`<details><summary>What does this do?</summary>This creates the fakefs but with bind mounts, so it uses a smaller size at the expense of having unwritable parts in rarely-written paths. </details>
 
 * #### If there still isn't enough space, you will have to use palera1n tethered using the [original Shell script](https://github.com/palera1n/palera1n). The C rewrite does not support tethered use at this time.
 
