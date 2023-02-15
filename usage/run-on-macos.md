@@ -18,7 +18,7 @@ description: Run palera1n on macOS
 4. In a terminal, cd to where the binary was downloaded, usually Downloads
    1. Example: `cd ~/Downloads`
 5. Run `sudo mv ./palera1n-macos-universal /usr/local/bin/palera1n`
-6. Run `sudo xattr -cr /usr/local/bin/palera1n`
+6. Run `sudo xattr -c /usr/local/bin/palera1n`
 7. Run `sudo chmod +x /usr/local/bin/palera1n`
 
 You may go to the [Jailbreak](jailbreak.md) page to learn how to use it.
