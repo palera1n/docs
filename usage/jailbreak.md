@@ -20,3 +20,5 @@ Note that the use of a bindFS is **HIGHLY EXPERIMENTAL** and may not work as exp
 To jailbreak rootless, use `palera1n` without any arguments. Keep in mind that tweak support is very minimal.
 
 For a full list of options, run `palera1n --help`
+
+Instructions to **remove** the jailbreak (restorerootFS) can be found [here](./restorerootfs.md)
