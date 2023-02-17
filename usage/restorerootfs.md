@@ -2,7 +2,7 @@
 description: Learn how to restorerootFS with palera1n-c
 ---
 
-# restorerootFS on Linux with palera1n-c
+# restorerootFS with palera1n-c
 
 ## Restart usbmuxd (**Linux ONLY**)
 
