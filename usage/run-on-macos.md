@@ -21,4 +21,4 @@ description: Run palera1n on macOS
 6. Run `sudo xattr -c /usr/local/bin/palera1n`
 7. Run `sudo chmod +x /usr/local/bin/palera1n`
 
-You may go to the [Jailbreak](jailbreak.md) page to learn how to use it.
+Visit the [Jailbreak](jailbreak.md) page to learn how to use palera1n-c
