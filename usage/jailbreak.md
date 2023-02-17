@@ -18,3 +18,5 @@ If you are on a 16GB device, run `palera1n -Bf` to create the bindFS and boot it
 Note that the use of a bindFS is **HIGHLY EXPERIMENTAL** and may not work as expected. It also has issues with iOS 16. **USE AT YOUR OWN RISK!!!**
 
 To jailbreak rootless, use `palera1n` without any arguments. Keep in mind that tweak support is very minimal.
+
+For a full list of options, run `palera1n --help`
