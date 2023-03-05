@@ -4,10 +4,24 @@ description: Learn how to jailbreak your device with palera1n
 
 # Jailbreak
 
-Make sure to prefix the commands with `sudo` if you're on Linux. Make sure your device is connected in any mode. If you're on A11, please disable your passcode before proceeding. If you're on A11 iOS 16 and had a passcode enabled, you must erase your device in settings or with iTunes on a computer. Yes, you can use a backup. Please create a backup before proceeding, anyway. While damage is unlikely and will not happen, making a backup beforehand is safe. We are **not** responsible for any damage.
+## Rootful (recommended) <sub>(for now)</sub>
+* #### First jailbreak
+  * Run `./palera1n -f -c`
+* #### If you've already jailbroken before/created the fakefs
+  * Run `./palera1n -f`
 
-If you have used palera1n semi-tethered before, you can use `palera1n -f` to boot your original fakefs.
+### If you don't have enough space for the fakefs (16GB device, or just not enough space)
+* #### First jailbreak
+  * Run `./palera1n -f -B`<details><summary>What does this do?</summary>This creates the fakefs but with bind mounts, so it uses a smaller size at the expense of having unwritable parts in rarely-written paths. </details>
 
-If you have not used palera1n before, or have restored rootfs since you were using tethered, run `palera1n -cf` to create your fakefs, and when the device boots run `palera1n -f` to boot it.
+* #### If there still isn't enough space, you will have to use palera1n tethered using the [original Shell script](https://github.com/palera1n/palera1n). The C rewrite does not support tethered use at this time.
 
-To jailbreak rootless, use `palera1n` without any args. Keep in mind that tweak support is very minimal.
+
+## Rootless
+* Just run `./palera1n`
+
+Please keep in mind that that tweak support is very minimal on rootless.
+
+<br>
+
+### All arguments and further information about palera1n-c can be found [here](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/palera1n.1.html).
