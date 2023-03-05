@@ -15,6 +15,7 @@ description: Common issues that users have
     4. [Stuck on PongoOS](#stuck-on-pongoos)
     5. [USB Error before booting kernel](#usb-error-before-booting-kernel)
     6. [panic: mount exited (exit status 66)](#panic-mount-exited-exit-status-66)
+    7. [Ignoring non-arm64 device](#ignoring-non-arm64-device)
 - ### Shell version (deprecated) specific
     1. ["Booted device" but not booted](#booted-device-but-not-booted)
     2. [Your local changes would be overwritten by checkout](#your-local-changes-would-be-overwritten-by-checkout)
@@ -55,6 +56,8 @@ description: Common issues that users have
     27. [Installing Linux without USB](#installing-linux-without-usb)
     28. [No such file or directory errors on device](#no-such-file-or-directory-errors-on-device)
     29. [Sileo error: Didn't find architectures ["iphoneos-arm64"]](#sileo-error-didnt-find-architectures-iphoneos-arm64)
+    30. [Unable to locate package ws.hbang.newterm2](#unable-to-locate-package-wshbangnewterm2)
+    31. [Unable to install TrollStore on rootful](#unable-to-install-trollstore-on-rootful)
 
 ### palera1n-c specific
 
@@ -92,6 +95,9 @@ If there is only one USB Error, you can ignore it.
 
 #### panic: mount exited (exit status 66)
 You are trying to use bindFS on iOS 16, which is not currently supported. If you have enough storage, use fakeFS, otherwise use rootless (very limited tweak support) or palera1n.sh tethered.
+
+#### Ignoring non-arm64 device
+palera1n uses the checkm8 BootROM exploit which relies on a hardware vulnerability in the A5-A11 chips. Apple has patched the vulnerability in A12 and newer chips, so it does not and **will never work** on those devices.
 
 ### Shell version (deprecated) specific
 
@@ -375,7 +381,13 @@ You are using rootless, which doesn't support most tweaks, they will have to be 
 
 If you didn't mean to use rootless, it's possible you accidentally jailbroke with palera1n-c without the `-f` option at some point, or a buggy tweak created `/var/jb` for you. In that case, try fixing it using the [rootless removal shortcut](https://www.icloud.com/shortcuts/042cdda69aa8435a8d9d6101f71a2de5). (You'll have to enable Settings → Shortcuts → Advanced → Allow Running Scripts.)
 
+#### Unable to locate package ws.hbang.newterm2
+Press and hold the Get button, and select a version older than 2.99. 
 
+Alternatively, you can use NewTerm 3 Beta from [Chariz](https://chariz.com).
+
+#### Unable to install TrollStore on rootful
+Go to the Havoc repo in Sileo, select TrollStore Helper from there, and use swipe actions to install it. Alternatively, manually download and install the [.deb](https://havoc.app/api/download/package/63ebda9d08e9c5b1bf72a82c/com.opa334.trollstorehelper_1.5.1_iphoneos-arm.deb).
 
 <br>
 
