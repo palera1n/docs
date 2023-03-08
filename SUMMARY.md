@@ -16,5 +16,6 @@
 * [Booting palen1x](palen1x/booting-palen1x.md)
 * [Jailbreak with palen1x](palen1x/jailbreak-with-palen1x.md)
 
+----
 
 * [Common Issues](COMMONISSUES.md)
