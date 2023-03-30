@@ -16,48 +16,51 @@ description: Common issues that users have
     5. [USB Error before booting kernel](#usb-error-before-booting-kernel)
     6. [panic: mount exited (exit status 66)](#panic-mount-exited-exit-status-66)
     7. [Ignoring non-arm64 device](#ignoring-non-arm64-device)
+    8. [Starting thread for Apple TV 4K Advanced board](#starting-thread-for-apple-tv-4k-advanced-board)
+    9. [Rootless gets stuck on booting](#rootless-gets-stuck-on-booting)
 - ### **Shell version (deprecated) specific**
     1. ["Booted device" but not booted](#booted-device-but-not-booted)
-    2. [Your local changes would be overwritten by checkout](#your-local-changes-would-be-overwritten-by-checkout)
-    3. [jbinit DIED! (sh)](#jbinit-died-sh)
-    4. [Pressing "install" on each jb](#pressing-install-on-each-jb)
-    5. [End of central-directory signature not found](#end-of-central-directory-signature-not-found)
-    6. [Stuck at waiting for network](#stuck-at-waiting-for-network)
-    7. [Found the USB handle followed by an error occurred](#found-the-usb-handle-followed-by-an-error-occurred)
-    8. [pip error: legacy-install-failure](#pip-error-legacy-install-failure)
-    9. [Permission denied (publickey, password)](#permission-denied-publickey-password)
+    2. [jbinit DIED! (sh)](#jbinit-died-sh)
+    3. [Pressing "install" on each jb](#pressing-install-on-each-jb)
+    4. [End of central-directory signature not found](#end-of-central-directory-signature-not-found)
+    5. [Stuck at waiting for network](#stuck-at-waiting-for-network)
+    6. [Found the USB handle followed by an error occurred](#found-the-usb-handle-followed-by-an-error-occurred)
+    7. [pip error: legacy-install-failure](#pip-error-legacy-install-failure)
+    8. [Permission denied (publickey, password)](#permission-denied-publickey-password)
+    9. ["Killed" issue (not "Killed: 9")](#killed-issue-not-killed-9)
 - ### **No specificity to version**
     1. [NewTerm not launching](#newterm-not-launching)
-    2. [palera1n/mineek repo not working](#palera1nmineek-repo-not-working)
-    3. [Procursus "killed 9"](#procursus-killed-9)
-    4. [App crashes on open](#app-crashes-on-open)
-    5. [Please reinstall Sileo via SSH](#please-reinstall-sileo-via-ssh)
-    6. [Loader app not appearing](#loader-app-not-appearing)
-    7. [Could not connect to lockdownd](#could-not-connect-to-lockdownd)
-    8. [Error installing bootstrap. Status: -1](#error-installing-bootstrap-status--1)
-    9. [Daemons crashing on iOS 16.2+](#daemons-crashing-on-ios-162)
-    10. [Panics making loader not appear](#panics-making-loader-not-appear)
-    11. [libhooker wants to install?](#libhooker-wants-to-install)
-    12. [Restoring rootfs still keeps app icons??](#restoring-rootfs-still-keeps-app-icons)
-    13. [Device boots out of DFU](#device-boots-out-of-dfu)
-    14. [SEP Panic: :skg /skgs](#sep-panic-skg-skgs)
-    15. [Cannot download apps from App Store](#cannot-download-apps-from-app-store)
-    16. [Snowboard theming incorrectly](#snowboard-theming-incorrectly)
-    17. [Filza crashing on launch](#filza-crashing-on-launch)
-    18. [dpkg error: Read-only file system](#dpkg-error-read-only-file-system)
-    19. [Library not loaded: /usr/lib/libSystem.B.dylib](#library-not-loaded-usrliblibsystembdylib)
-    20. [No space left on device](#no-space-left-on-device)
-    21. [Third-party daemons not loading on iOS 16](#third-party-daemons-not-loading-on-ios-16)
-    22. [RocketBootstrap not working (apps crashing, respring loops)](#rocketbootstrap-not-working-apps-crashing-respring-loops)
-    23. [Cannot install tweaks - Depends mobilesubstrate](#cannot-install-tweaks---depends-mobilesubstrate)
-    24. [Decrypting apps on palera1n](#decrypting-apps-on-palera1n)
-    25. [Sileo shows red "Queued" error](#sileo-shows-red-queued-error)
-    26. [AppSync Unified not working](#appsync-unified-not-working)
-    27. [Installing Linux without USB](#installing-linux-without-usb)
-    28. [No such file or directory errors on device](#no-such-file-or-directory-errors-on-device)
-    29. [Sileo error: Didn't find architectures ["iphoneos-arm64"]](#sileo-error-didnt-find-architectures-iphoneos-arm64)
-    30. [Unable to locate package ws.hbang.newterm2](#unable-to-locate-package-wshbangnewterm2)
-    31. [Unable to install TrollStore on rootful](#unable-to-install-trollstore-on-rootful)
+    2. [App crashes on open](#app-crashes-on-open)
+    3. [Please reinstall Sileo via SSH](#please-reinstall-sileo-via-ssh)
+    4. [Loader app not appearing](#loader-app-not-appearing)
+    5. [Could not connect to lockdownd](#could-not-connect-to-lockdownd)
+    6. [Package is in a very bad inconsistent state](#package-is-in-a-very-bad-inconsistent-state)
+    7. [Error installing bootstrap](#error-installing-bootstrap)
+    8. [Daemons crashing on iOS 16.2+](#daemons-crashing-on-ios-162)
+    9. [Panics making loader not appear](#panics-making-loader-not-appear)
+    10. [libhooker wants to install?](#libhooker-wants-to-install)
+    11. [Restoring rootfs still keeps app icons??](#restoring-rootfs-still-keeps-app-icons)
+    12. [Device boots out of DFU](#device-boots-out-of-dfu)
+    13. [SEP Panic: :skg /skgs](#sep-panic-skg-skgs)
+    14. [Cannot download apps from App Store](#cannot-download-apps-from-app-store)
+    15. [Snowboard theming incorrectly](#snowboard-theming-incorrectly)
+    16. [Filza crashing on launch](#filza-crashing-on-launch)
+    17. [dpkg error: Read-only file system](#dpkg-error-read-only-file-system)
+    18. [Library not loaded: /usr/lib/libSystem.B.dylib](#library-not-loaded-usrliblibsystembdylib)
+    19. [No space left on device](#no-space-left-on-device)
+    20. [Third-party daemons not loading on iOS 16](#third-party-daemons-not-loading-on-ios-16)
+    21. [RocketBootstrap not working (apps crashing, respring loops)](#rocketbootstrap-not-working-apps-crashing-respring-loops)
+    22. [Cannot install tweaks - Depends mobilesubstrate](#cannot-install-tweaks---depends-mobilesubstrate)
+    23. [Decrypting apps on palera1n](#decrypting-apps-on-palera1n)
+    24. [Sileo shows red "Queued" error](#sileo-shows-red-queued-error)
+    25. [AppSync Unified not working](#appsync-unified-not-working)
+    26. [Installing Linux without USB](#installing-linux-without-usb)
+    27. [No such file or directory errors on device](#no-such-file-or-directory-errors-on-device)
+    28. [Sileo error: Didn't find architectures ["iphoneos-arm64"]](#sileo-error-didnt-find-architectures-iphoneos-arm64)
+    29. [Unable to install TrollStore on rootful](#unable-to-install-trollstore-on-rootful)
+    30. [Hash for Packages.zst invalid](#hash-for-packageszst-invalid)
+    31. [dyld: Symbol not found - Referenced from /usr/bin/launchctl](#dyld-symbol-not-found---referenced-from-usrbinlaunchctl)
+    32. [libhooker-configurator](#libhooker-configurator)
 
 ### **palera1n-c specific**
 
@@ -65,11 +68,18 @@ description: Common issues that users have
 The exact cause depends on the preceding error messages, so send a log. A common cause is trying to use the create fakefs (`-c`) option when rejailbreaking. You need to remove that option if it's not your first time jailbreaking since last restoring rootfs.
 
 #### **Timed out waiting for download mode**
-This is usually caused by a bad DFU state. Reboot and try again.
+If the device is stuck on the Apple logo, unplug and replug the device.
 
-Things to check:
-- Use a USB-A cable, not USB-C.
-  - If you have an Apple Silicon Mac, you may need a USB hub rather than a single-cable adapter.
+If the device booted up to normal mode, try jailbreaking again and make sure you entered DFU correctly. Entering DFU straight from normal mode is known to cause issues (at least on A11). You should enter recovery mode first and let palera1n guide you to enter DFU. (This will require a USB-A cable, it won't work with most USB-C cables)
+
+If the device is stuck in recovery mode:
+- Make sure you [restored rootfs](https://ios.cfw.guide/removing-palera1n-legacy/) with palera1n.sh if you used tethered before, as palera1n-c does not support creating or booting a tethered setup
+- Try exiting recovery mode using `palera1n -n`
+- If it's still recovery looping and you can't exit, your SSV seal is most likely broken. Use the [apfs-reseal script](https://github.com/0xallie/apfs-reseal) to fix it. (This script currently only works fully automatically on macOS. If you're on Linux, join the [Discord server](https://dsc.gg/palera1n) and ask `@alexia#0003` for guidance.)
+- As a last resort, try updating in iTunes/Finder, and if that doesn't fix it, restore.
+
+Other things to check:
+- Use a USB-A cable, not USB-C (if you have an Apple Silicon Mac, you may need a USB hub rather than a single-cable adapter).
 - Start from normal or recovery mode, as going straight to DFU usually causes issues.
 - Use a computer with an Intel or Apple Silicon CPU, as AMD has issues.
 
@@ -99,19 +109,20 @@ You are trying to use bindFS on iOS 16, which is not currently supported. If you
 #### **Ignoring non-arm64 device**
 palera1n uses the checkm8 BootROM exploit which relies on a hardware vulnerability in the A5-A11 chips. Apple has patched the vulnerability in A12 and newer chips, so it does not and **will never work** on those devices.
 
+#### **Starting thread for Apple TV 4K Advanced board**
+This message shows up regardless of the connected device's type and is safe to ignore. It does not mean palera1n thinks your device is an Apple TV.
+
+#### **Rootless gets stuck on booting**
+1. Force reboot the device
+2. Re-run palera1n with the `-s` option (`Safe Mode` in palen1x)
+3. Once the device boots up, press the gear icon in the loader and then press Do All
+
 ### **Shell version (deprecated) specific**
 
 #### **"Booted device" but not booted**
 This may happen when the downloading and patching process is interrupted. Please run `./palera1n.sh clean` (use with `sudo` if on Linux), then try again.
 
-If that doesn't fix it, it may be caused by an update from the Procursus repo. The quickest way to fix it is `./palera1n.sh --restorerootfs`. Alternatively, you can manually restore `/usr/libexec/dirs_cleaner` from the rootfs snapshot using the SSHRD script.
-
-#### **Your local changes would be overwritten by checkout**
-Run the following commands, and then try again:
-- `cd ramdisk`
-- `git stash`
-- `git stash drop`
-- `cd ..`
+If that doesn't fix it, it may be caused by an update from the Procursus repo. The quickest way to fix it is to [restore rootfs](https://ios.cfw.guide/removing-palera1n-legacy/). Alternatively, you can manually restore `/usr/libexec/dirs_cleaner` from the rootfs snapshot using the SSHRD script.
 
 #### **jbinit DIED! (sh)**
 Your device may get stuck on a verbose boot screen, and if you look closely you'll see a "jbinit DIED!" error near the top.
@@ -123,10 +134,10 @@ Advanced users can also try re-copying the `other/rootfs` files manually to the 
 #### **Pressing "install" on each jb**
 **DO NOT DO THIS**. It resets your package lists and will likely break your jailbreak install eventually. Instead, press the gear icon, and then press Do All.
 
-If you managed to mess up your jailbreak this way, [restore rootfs](https://ios.cfw.guide/removing-palera1n/).
+If you managed to mess up your jailbreak this way, [restore rootfs](https://ios.cfw.guide/removing-palera1n-legacy/).
 
 #### **End of central-directory signature not found**
-If the error message says `palera1n.zip`, you are running an outdated version of palera1n and need to update using `git pull`. If that doesn't work, see reclone palera1n.
+If the error message says `palera1n.zip`, you are running an outdated version of palera1n and need to update using `git pull`. If that doesn't work, reclone palera1n by running `cd .. && sudo rm -rf palera1n && sudo git clone -b legacy --recursive --depth=1 --shallow-submodules https://github.com/palera1n/palera1n && cd palera1n`.
 
 Otherwise, this error most likely indicates a problem with your internet connection, and you simply need to try running palera1n.sh again.
 
@@ -164,17 +175,44 @@ If you get this error while using palera1n.sh:
 1. Run `./palera1n.sh --clean && rm -rf blobs` 
 2. Try jailbreaking again.
 
+#### "Killed" issue (not "Killed: 9")
+You ran out of RAM. This most commonly happens on a Linux live USB.
+
+Ways to fix the issue, ordered by which to try first:
+1. **Use palera1n-c or palen1x, it requires much less RAM and shouldn't have such issues**
+2. Close some apps, like Chrome and Discord
+3. Attempt a shallow clone (git clone --depth=1) (this should have been done by default)
+4. Clone palera1n onto persistent storage [(Note 1)](#note-1-how-to-use-persistent-storage-from-linux-live-with-terminal)
+5. Install Linux onto your computer
+
+If there is still not enough RAM:
+- Set up a swap area [(Note 2)](#note-2-how-to-set-up-swap-space) that is at least 2 GB in size, especially for computers with less than 2 GB RAM
+
+##### **Note 1: How to use persistent storage from Linux live, with terminal**
+1. If you have already cloned palera1n, please delete it! Usually this can be done with `sudo rm -rf palera1n`
+2. You may want to install ntfs-3g first; on Ubuntu this can be done with `sudo apt install ntfs-3g`
+3. Run `sudo lsblk` to list your disks
+4. Locate the persistent storage you want to use, for example a Windows `C:` drive would be of type "ntfs" and at least 10 GB in size. Take a note of the device name, which starts with `/dev`.
+5. Mount the disk onto `/mnt` (example, please *don't paste as is*): `sudo mount -t ntfs /dev/sda3 /mnt`
+6. Change the working directory to /mnt: `cd /mnt`
+7. Try to clone palera1n again
+
+##### **Note 2: How to set up swap space**
+
+Most Linux installers will set it up a swap area automatically during the install if you use guided partitioning (if such an option exists). If it didn't set up one for you, here's how to do it manually:
+
+In order to create a 2 GB swap area as root, run the following commands:
+1. `dd if=/dev/zero of=/swapfile bs=1M count=2048`
+2. `chmod 600 /swapfile`
+3. `mkswap /swapfile`
+4. `echo '/swapfile none swap 0 0 | sudo tee -a /etc/fstab`
+5. `swapon /swapfile`
+
 ### **No specificity to version**
 
 #### **NewTerm not launching**
 
-Install NewTerm 2 from the [palera1n strap repo](https://repo.palera.in/) or get NewTerm 3 beta from [Chariz](https://chariz.com/get/newterm-beta).
-
-#### **palera1n/mineek repo not working**
-https://repo.palera.in/ and https://mineek.github.io/repo are supposed to be used on rootless jailbreaks, not with jailbreaks with fakefs or tethered that have root access.
-
-#### **Procursus "killed 9"**
-Binaries will need to be resigned by the Procursus Team to fix Killed: 9. In the meantime, use the palera1n strap repo. You can install it from [nebula’s repo](https://apt.itsnebula.net).
+Install NewTerm 2 from the [palera1n strap repo](https://repo.palera.in/) or NewTerm 3 beta from [Chariz](https://chariz.com/get/newterm-beta). Also make sure to update shell-cmds and system-cmds to the latest version.
 
 #### **App crashes on open**
 
@@ -195,9 +233,12 @@ If you have AutoSign installed and you reinstall/update Sileo, you'll get the er
 
 It should be fixed after these steps.
 
+Example image:
+![image depicting sileo reinstall via ssh error](https://media.discordapp.net/attachments/1028693596469207191/1051879461093650442/1F92489D-5CA5-4E0C-A1FE-CED814FB0089.png?width=169&height=300)
+
 #### **Loader app not appearing**
 1. Check if [this shortcut](https://www.icloud.com/shortcuts/8cd5f489c8854ee0ab9ee38f2e62f87d) works
-2. Check for any panic logs. If there is any, try to post them into your support thread or the jailbreak chat.
+2. Check for any panic logs. If there are any, join the [Discord server](https://dsc.gg/palera1n) and send them in a support thread or in `#general`.
 - Send the one with latest log that starts with `panic-full` **NOT any other log**
 - The log can be acquired through the iDevice that you are trying to jailbreak.
   - Go to 
@@ -226,14 +267,31 @@ Accept the prompt to trust the computer on your device.
 Alternatively, just enter recovery mode manually before jailbreaking.
 
 #### **Package is in a very bad inconsistent state**
-You can fix this by running this command in NewTerm or SSH:
-- `sudo dpkg -r --force-remove-reinstreq <PACKAGE_NAME>`
-  - Don't include the <>
+This usually shows up when trying to uninstall the package from Sileo or another package manager.
 
-#### **Error installing bootstrap. Status: -1**
+You can fix this by running this command in NewTerm or SSH:
+- `sudo dpkg -r --force-all <BUNDLE_ID>`
+  - Don't include the <>
+  - If you get "`Killed: 9`" when trying to remove it:
+    - Run `echo /var/lib/dpkg/info/<BUNDLE_ID>.[ep]* | xargs sudo ldid -s`
+  - If you get a syntax error when trying to remove it:
+    - `sudo sed -i 's,/bin/sh,/usr/bin/env bash,' /var/lib/dpkg/info/<BUNDLE_ID>.[ep]*`
+- If none of the above commands worked:
+  - Run `sudo rm -f /var/lib/dpkg/info/<BUNDLE_ID>.[ep]*`
+  - Then run `sudo dpkg -r --force-all <BUNDLE_ID>`
+
+*As a final resort*, if none of these worked, you can [restore rootfs](https://ios.cfw.guide/removing-palera1n) and rejailbreak.
+
+#### **Error installing bootstrap**
+**Status: -1**
+
 You're not jailbroken. Sideloading the loader app on its own **will not work**.
 
-Please run palera1n on your computer to jailbreak your phone.
+Please run palera1n on your computer to jailbreak your device.
+
+**Status: 5**
+
+You didn't restore rootfs before updating iOS. [Restore rootfs](https://ios.cfw.guide/removing-palera1n/) and then try jailbreaking again.
 
 #### **Daemons crashing on iOS 16.2+**
 Older versions of Substitute may cause daemons to constantly crash on iOS 16.2 and above, which may also drain your battery. Make sure to install the latest version from the [palera1n strap repo](https://repo.palera.in/).
@@ -269,7 +327,7 @@ Make sure to use a USB-A cable, and then follow one of the methods below to ente
 - **Method 2**
   1. Power off your device.
   2. Connect it to your computer or a charger
-  3. As soon as the Apple logo comes on, start doing the [DFU mode sequence](https://help.ifixit.com/article/108-dfu-restore).
+  3. Immediately start doing the [DFU mode sequence](https://help.ifixit.com/article/108-dfu-restore).
 
 #### **SEP Panic: :skg /skgs**
 This happens due to having a passcode set on A10-A11 devices when jailbreaking (or having previously set a passcode on iOS 16, even if it's currently turned off).
@@ -284,14 +342,19 @@ This happens due to having a passcode set on A10-A11 devices when jailbreaking (
   - Restore the backup.
   - Try jailbreaking again.
 
-On A11, you can use FakePass from https://repo.alexia.lol/ to have a passcode (and Face ID on the iPhone X, no Touch ID support on the 8 yet), but this will only work in jailbroken state. It can be bypassed by simply rebooting the device.
+On A11, you can use FakePass from https://repo.alexia.lol/ to have a passcode (and Face ID on the iPhone X, no Touch ID support yet), but this will only work in jailbroken state. It can be bypassed by simply rebooting the device.
 
 A10 devices boot using PongoOS, so they will natively support a passcode and Touch ID.
 
 #### **Cannot download apps from App Store**
-Install Choicy from [this repo](https://opa334.github.io/) and disable tweak injection into the App Store.
+**Method 1**
+Install Choicy from [this repo](https://opa334.github.io) and disable tweak injection into the App Store.
 
-Alternatively, disable tweak injection globally in the Substitute app and respring. You can re-enable it after downloading the apps you wanted.
+**Method 2**
+Disable tweak injection globally in the Substitute app and respring. You can re-enable it after downloading the apps you wanted.
+
+**Method 3**
+Install "Not a bypass" from [this repo](https://uckermark.github.io/repo/), open the app it installs, enable the bypass, install the app(s) you want and then disable the bypass.
 
 #### **Snowboard theming incorrectly**
 You may be encountering an issue with Snowboard not theming correctly or not theming at all. To fix this, make sure you have Snowboard from [SparkDev's repo](https://sparkdev.me) to solve these issues.
@@ -373,20 +436,28 @@ Make sure to disable Secure Boot from BIOS/UEFI setup before installing Wubi. (I
 You can download Wubi [here](https://github.com/hakuna-m/wubiuefi/releases/download/22041r345/wubi22041r345.exe).
 
 #### **No such file or directory errors on device**
-If you get a bunch of "No such file or directory" errors on a verbose screen on your device or computer while jailbreaking with palera1n, it means you don't have enough storage left on your device. Refer to [here](#no-space-left-on-device).
+If you get a bunch of "No such file or directory" errors on a verbose screen on your device while jailbreaking with palera1n, it means you don't have enough storage left on your device. FakeFS requires about 10 GB free. [Restore rootfs](https://ios.cfw.guide/removing-palera1n/) and free up some space or try using bindFS instead, which only uses about 3 GB.
 
 #### **Sileo error: Didn't find architectures ["iphoneos-arm64"]**
-You are using rootless, which doesn't support most tweaks, they will have to be updated.
+You are using rootless, which doesn't support most tweaks; they will have to be updated.
 
 If you didn't mean to use rootless, it's possible you accidentally jailbroke with palera1n-c without the `-f` option at some point, or a buggy tweak created `/var/jb` for you. In that case, try fixing it using the [rootless removal shortcut](https://www.icloud.com/shortcuts/042cdda69aa8435a8d9d6101f71a2de5). (You'll have to enable Settings → Shortcuts → Advanced → Allow Running Scripts.)
 
-#### **Unable to locate package ws.hbang.newterm2**
-Press and hold the Get button, and select a version older than 2.99. 
-
-Alternatively, you can use NewTerm 3 Beta from [Chariz](https://chariz.com).
+As a last resort, [restore rootfs](https://ios.cfw.guide/removing-palera1n/) and *pay attention* to make sure you're jailbreaking with rootful and *not* rootless.
 
 #### **Unable to install TrollStore on rootful**
 Go to the Havoc repo in Sileo, select TrollStore Helper from there, and use swipe actions to install it. Alternatively, manually download and install the [.deb](https://havoc.app/api/download/package/63ebda9d08e9c5b1bf72a82c/com.opa334.trollstorehelper_1.5.1_iphoneos-arm.deb).
+
+#### **Hash for Packages.zst invalid**
+This is an issue with the repo you're using, and there's nothing you can do as a user to fix it (other than using a different package manager such as Zebra).
+
+It may be caused by Cloudflare's cache, in which case wait up to 4 hours and try again, or ask the repo maintainer to clear the cache.
+
+#### **dyld: Symbol not found - Referenced from /usr/bin/launchctl**
+Remove the Hephaestus/Ironside repo temporarily and downgrade launchctl to 1:1.1.1.
+
+#### **libhooker-configurator**
+palera1n does **NOT** support libhooker. Please use Choicy instead of libhooker-configurator as they do the same thing.
 
 <br>
 
