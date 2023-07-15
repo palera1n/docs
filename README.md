@@ -1,7 +1,8 @@
 ---
 description: Welcome to the palera1n docs!
 ---
-
+### Warning
+No longer mantained, use https://ios.cfw.guide instead.
 # Home
 
 ## Usage Guides
